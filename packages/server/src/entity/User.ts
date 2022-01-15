@@ -1,18 +1,33 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, Index, CreateDateColumn } from 'typeorm'
 
-@Entity()
+@Entity({
+    name: 'users'
+})
 export class User {
-
     @PrimaryGeneratedColumn()
-    id: number;
+    id!: number;
 
+    @Index()
     @Column()
-    firstName: string;
+    email!: string;
 
+    @Index()
+    @Column({length: 16, nullable: true})
+    username?: string
+
+    @Column({length: 255, nullable: true})
+    photo_url?: string
+
+    @Index()
+    @CreateDateColumn()
+    created_at!: Date;
+
+    @Index()
     @Column()
-    lastName: string;
+    is_certified!: boolean
 
-    @Column()
-    age: number;
-
+    serialize() {
+        const { is_certified, created_at, email, ...rest } = this
+        return rest
+    }
 }

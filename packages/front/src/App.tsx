@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import AppLayout from './components/AppLayout'
+import { css, Global } from '@emotion/react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <AppLayout>
+        <AppLayout.TopNav>top</AppLayout.TopNav>
+        <AppLayout.MainBody>
+          <AppLayout.Side>side</AppLayout.Side>
+          <AppLayout.Main>main</AppLayout.Main>
+        </AppLayout.MainBody>
+        <AppLayout.Footer>footer</AppLayout.Footer>
+      </AppLayout>
+      <Global styles={globalStyle} />
+    </>
+  )
 }
 
-export default App;
+const globalStyle = css`
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  html {
+    box-sizing: border-box;
+
+    * {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+
+      a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+        border: 0;
+        vertical-align: baseline;
+        font-size: 100%;
+      }
+    }
+  }
+`
+
+export default App
