@@ -1,13 +1,13 @@
 import React from 'react'
 import AppLayout from './components/AppLayout'
 import { css, Global } from '@emotion/react'
+import HeaderNav from './components/HeaderNav'
 
 function App() {
   return (
     <>
       <AppLayout>
-        <AppLayout.TopNav>top</AppLayout.TopNav>
-        <AppLayout.MainBody>
+        <AppLayout.TopNav><HeaderNav/></AppLayout.TopNav>
           <AppLayout.Side>side</AppLayout.Side>
           <AppLayout.Main>main</AppLayout.Main>
         </AppLayout.MainBody>
@@ -27,7 +27,7 @@ const globalStyle = css`
 
   html {
     box-sizing: border-box;
-
+    font-size: 62.5%;
     * {
       box-sizing: inherit;
       margin: 0;
