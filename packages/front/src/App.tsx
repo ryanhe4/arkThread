@@ -8,7 +8,6 @@ function App() {
     <>
       <AppLayout>
         <AppLayout.TopNav><HeaderNav/></AppLayout.TopNav>
-        <AppLayout.MainBody>
           <AppLayout.Side>side</AppLayout.Side>
           <AppLayout.Main>main</AppLayout.Main>
         </AppLayout.MainBody>
