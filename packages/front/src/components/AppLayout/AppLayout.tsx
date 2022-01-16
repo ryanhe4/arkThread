@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import palette from '../../lib/palette'
 
 export type AppLayoutProps = {
   children: React.ReactNode
@@ -64,11 +65,10 @@ const topNavStyle = css`
   z-index: 1000;
   flex-shrink: 0 !important;
   height: 5rem;
-  background: purple;
 `
 const sideNavStyle = css`
   width: 24rem;
-  background: aqua;
+  background: ${palette.blueGrey[200]};
 `
 
 const mainBodyStyle = css`
@@ -86,11 +86,12 @@ const mainStyle = css`
   flex-direction: column !important;
   overflow: hidden !important;
   position: relative !important;
-  background: green;
+  background: ${palette.blueGrey[100]};
 `
 const footerStyle = css`
   position: relative;
   border-radius: 0.4rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.9) ,0 0px 2px rgba(0,0,0,0.9) !important;
   padding: 1rem 2rem;
+  background: purple;
 `
