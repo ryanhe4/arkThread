@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       <AppLayout>
-        <AppLayout.TopNav><HeaderNav/></AppLayout.TopNav>
+        <AppLayout.TopNav><HeaderNav /></AppLayout.TopNav>
+        <AppLayout.MainBody>
           <AppLayout.Side>side</AppLayout.Side>
           <AppLayout.Main>main</AppLayout.Main>
         </AppLayout.MainBody>
@@ -28,6 +29,7 @@ const globalStyle = css`
   html {
     box-sizing: border-box;
     font-size: 62.5%;
+
     * {
       box-sizing: inherit;
       margin: 0;

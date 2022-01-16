@@ -69,6 +69,7 @@ const topNavStyle = css`
 const sideNavStyle = css`
   width: 24rem;
   background: ${palette.blueGrey[200]};
+`
 
 const mainBodyStyle = css`
   display: flex !important;
@@ -86,6 +87,7 @@ const mainStyle = css`
   overflow: hidden !important;
   position: relative !important;
   background: ${palette.blueGrey[100]};
+`
 
 const footerStyle = css`
   position: relative;
