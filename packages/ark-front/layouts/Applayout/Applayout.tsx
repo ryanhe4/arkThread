@@ -1,4 +1,4 @@
-import { mainStyle, verticalbarStyle } from '@layouts/Applayout/styles'
+import { mainStyle, sidebarStyle } from '@layouts/Applayout/styles'
 import React from 'react'
 
 export type ApplayoutProps = {
@@ -6,16 +6,17 @@ export type ApplayoutProps = {
 }
 
 function Applayout({ children }: ApplayoutProps) {
-  return <>{children}</>
+  return <div>{children}</div>
 }
 
-export type TopProps = {
+export type SideProps = {
   children: React.ReactNode;
 }
 
-function Top({ children }: TopProps) {
-  return <header css={verticalbarStyle}>{children}</header>
+function Side({ children }: SideProps) {
+  return <aside css={sidebarStyle}>{children}</aside>
 }
+
 
 export type MainProps = {
   children: React.ReactNode;
@@ -25,7 +26,7 @@ function Main({ children }: MainProps) {
   return <main css={mainStyle}>{children}</main>
 }
 
-Applayout.Top = Top
 Applayout.Main = Main
+Applayout.Side = Side
 
 export default Applayout

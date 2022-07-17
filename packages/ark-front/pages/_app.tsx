@@ -1,14 +1,14 @@
 import type { AppProps } from 'next/app'
 import Applayout from '@layouts/Applayout'
-import Header from '@components/Header'
 import { css, Global } from '@emotion/react'
+import Sidebar from '@components/Sidebar'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Application({ Component, pageProps }: AppProps) {
   return <>
     <Applayout>
-      <Applayout.Top>
-        <Header />
-      </Applayout.Top>
+      <Applayout.Side>
+        <Sidebar />
+      </Applayout.Side>
       <Applayout.Main>
         <Component {...pageProps} />
       </Applayout.Main>
@@ -30,10 +30,20 @@ const globalStyle = css`
       margin: 0;
       padding: 0;
 
+      word-break: keep-all;
+      word-wrap: break-word;
+
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      user-select: none;
     }
   }
 `
 
-export default MyApp
+export default Application
